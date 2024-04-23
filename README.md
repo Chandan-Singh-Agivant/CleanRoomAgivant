@@ -1,34 +1,38 @@
-# AWS Clean Rooms Lab
+# Agivant Working Model Implementaion for AWS Clean Rooms
 
-This lab will walk you through the setup of AWS Clean Rooms and try its different features.
+This will walk you through the setup of AWS Clean Rooms and try its different features.
 
 ## Scenario
 
 The dataset we use is a modified version of the Customer loyalty program data from Northern Lights Air (NLA), a fictitious airline based in Canada. The original dataset is downloaded from [Maven Analytics](https://mavenanalytics.io/data-playground)
 
-In this lab, we will set up the loyalty program member and flight activity databases in 2 different AWS accounts.
+In this implementation, we will set up the loyalty program member and flight activity databases in 3 different AWS accounts.
 
-By using AWS Clean Rooms, the lab will showcase how data analysts can utilize data sources from different entities to perform data analysis without compromising data privacy.
+By using AWS Clean Rooms, the implementation will showcase how data analysts can utilize data sources from different entities to perform data analysis without compromising data privacy.
 
 ## Prerequisite
 
-* 2 AWS accounts
+* 3 AWS accounts
 * Admin access on each AWS account (Both console and API access)
 * Terraform
 
 ### Setup your environment
 
-To deploy resources efficiently, the Terraform templates in this lab will be using 2 AWS profiles named:
+To deploy resources efficiently, the Terraform templates in this implementation will be using 3 AWS profiles named:
 
-* `aws-clean-rooms-lab-account-1`
+* `aws-clean-rooms-agency-1`
 
    This is the account hosting members' database.
 
-* `aws-clean-rooms-lab-account-2`
+* `aws-clean-rooms-agency-2`
 
    This is the account hosting the flight activity database.
 
-You should follow [this AWS guideline](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html#cli-configure-files-format-profile) to set up your local environment and set up these 2 profiles using the admin credentials of each AWS accounts.
+* `aws-clean-rooms-agency-3`
+
+   This is the account hosting member database.
+
+You should follow [this AWS guideline](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html#cli-configure-files-format-profile) to set up your local environment and set up these 3 profiles using the admin credentials of each AWS accounts.
 
 **You should setup the profiles with the exact names given above.**
 
@@ -64,19 +68,19 @@ The following are some terminologies we will use in this lab.
 
 0. **[Prepare Glue database](/00-prepare-glue-database)**
 
-   This session is to create the AWS Glue databases, which we can use in the lab.
+   This implementation is to create the AWS Glue databases, which we can use in the lab.
 
 1. **[Simple Collaboration](/01-create-simple-collaboration)**
 
-   In this session, we will create our first AWS Clean Rooms collaboration with a simple configured table.
+   In this implementation, we will create our first AWS Clean Rooms collaboration with a simple configured table.
 
 1. **[Joining data from different data sources](/02-joining-tables)**
 
-   In this session, we will use AWS Clean Rooms to join multiple tables from different accounts.
+   In this implementation, we will use AWS Clean Rooms to join multiple tables from different accounts.
 
 1. **[Differential Privacy](/03-differential-privacy)**
 
-   In this session, we will explore AWS Clean Rooms Differential Privacy and experience how differential privacy can be applied to data collaboration.
+   In this implementation, we will explore AWS Clean Rooms Differential Privacy and experience how differential privacy can be applied to data collaboration.
 
 1. **Cryptographic Computing for Clean Rooms (C3R)**
 
